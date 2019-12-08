@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.lq.mapper.MyMapper">
+    	<select id="GoodsAll" resultType="com.lq.pojo.Goods">
+    		select gid from t_good where gname=#{gname}
+    	</select>
+    	
+    	<insert id="insertUser" parameterType="com.lq.pojo.User">
+    	insert into t_user(id,username,email,phone,sales,gid)
+    	values(#{id},#{username},#{email},#{phone},#{sales},#{gid})
+    	</insert>
+    	<insert id="insertError"  parameterType="com.lq.pojo.Error">
+    	insert into error_record(error)values(#{error})
+    	</insert>
+    </mapper>
